@@ -1,0 +1,55 @@
+@use "../../scss/abstracts";
+@use '../../scss/base/media-queries' as breakpoint;
+
+.dynamic-article {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+
+	&__loading {
+		margin-top: abstracts.function_em(100);
+		@include abstracts.mixin_font(
+			$cl-ratio: 1.3,
+			$cl-px: 48,
+			$font-weight: 700,
+			$line-height: 1.2,
+			$color: var(--global-grey)
+		);
+	}
+
+	& article {
+		padding: 0;
+		@include breakpoint.mq(mobile) {
+			order: 2;
+		}
+	}
+
+	.slider {
+		@include breakpoint.mq(mobile) {
+			order: 1;
+			align-self: flex-end;
+			margin-top: abstracts.function_em(-70);
+		}
+	}
+}
+
+.shop-link {
+	width: fit-content;
+	display: flex;
+	align-items: center;
+	gap: abstracts.function_em(20);
+
+	@include abstracts.mixin_font(
+		$cl-ratio: 1.2,
+		$cl-px: 18,
+		$font-weight: 600,
+		$line-height: 1.5,
+		$text-transform: uppercase,
+		$letter-spacing: 10px,
+		$color: var(--global-grey)
+	);
+
+	& img {
+		opacity: 0.3;
+	}
+}

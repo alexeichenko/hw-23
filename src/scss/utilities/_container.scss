@@ -1,0 +1,21 @@
+@use '../abstracts';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: clip;
+  width: 100%;
+}
+
+.flow > * + * {
+  margin-top: 1.5rem;
+}
+
+[class*="container"] {
+  width: min(abstracts.$variable_pc, 100% - 8rem);
+  margin-inline: auto;
+}
+
+body {
+  font-family: var(--sans);
+}

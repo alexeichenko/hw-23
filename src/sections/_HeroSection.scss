@@ -1,0 +1,19 @@
+@use '../scss/abstracts';
+
+.home-hero,
+.contact-hero {
+
+	background: url('../img/desktop-image-hero-1.jpg') center / cover no-repeat;
+
+}
+
+.shop-hero {
+
+	background: url('../img/desktop-image-hero-2.jpg') center / cover no-repeat;
+
+}
+
+.about-hero {
+
+	background: url('../img/desktop-image-hero-3.jpg') center / cover no-repeat;
+}

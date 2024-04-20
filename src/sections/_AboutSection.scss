@@ -1,0 +1,39 @@
+@use '../scss/abstracts';
+@use '../scss/base/media-queries' as breakpoint;
+
+.about-section {
+
+	display: flex;
+	flex-flow: row nowrap;
+
+	@include breakpoint.mq(pc) {
+		flex-flow: column nowrap;
+	}
+
+	&__picture {
+		flex: 1;
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	& article {
+		flex: 1.2;
+		padding: 0 abstracts.function_em(80);
+		margin-top: abstracts.function_em(50);
+
+		& h2 {
+			text-transform: uppercase;
+			letter-spacing: 5px;
+		}
+		@include breakpoint.mq(pc) {
+			align-self: center;
+			flex: 1;
+			margin: abstracts.function_em(50) 0;
+			padding: 0;
+		}
+	}
+}
