@@ -1,0 +1,90 @@
+@use "../scss/abstracts";
+@use "../scss/base/media-queries" as breakpoint;
+
+main {
+	display: flex;
+	flex-flow: row nowrap;
+
+	@include breakpoint.mq(pc) {
+		flex-flow: column nowrap;
+	}
+
+	& [class*="-hero"] {
+		flex: 1 0 60%;
+		@include breakpoint.mq(1600px) {
+			flex: 1 1 auto;
+		}
+	}
+
+	& [class*="-article"] {
+		@include breakpoint.mq(1600px) {
+			flex: 1 1 auto;
+		}
+	}
+}
+
+// Home page
+
+.home-main {
+	height: 70svh;
+	@include breakpoint.mq(1800px) {
+		height: auto;
+	}
+}
+
+.home-hero {
+	@include breakpoint.mq(pc) {
+		height: 50svh;
+	}
+}
+
+.home-footer {
+	height: 30svh;
+	@include breakpoint.mq(1800px) {
+		height: auto;
+	}
+}
+
+// Other pages
+
+.shop-main,
+.about-main,
+.contact-main {
+	height: 100svh;
+	@include breakpoint.mq(pc) {
+		height: auto;
+	}
+}
+
+.shop-hero,
+.about-hero,
+.contact-hero {
+	@include breakpoint.mq(pc) {
+		height: 50svh;
+	}
+}
+
+.contact-main {
+
+	& article {
+	
+		padding: abstracts.function_em(100);
+	
+	}
+
+}
+
+// Not found
+
+.not-found {
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&__title {
+		margin-top: abstracts.function_rem(100);
+		@include abstracts.mixin_font($cl-ratio: 1.3, $cl-px: 48, $font-weight: 700, $line-height: 1.8);
+	}
+
+}

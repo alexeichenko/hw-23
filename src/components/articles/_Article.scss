@@ -1,0 +1,50 @@
+@use "../../scss/abstracts";
+@use "../../scss/base/media-queries" as breakpoint;
+
+article {
+	display: flex;
+	flex-flow: column wrap;
+
+	margin: abstracts.function_em(100) 0;
+	padding: 0 abstracts.function_em(50);
+
+	@include breakpoint.mq(pc) {
+	
+		margin: abstracts.function_em(50);
+	
+	}
+
+	@include breakpoint.mq(mobile) {
+		padding: 0;
+	}
+
+	& h1 {
+		&::first-letter {
+			text-transform: capitalize;
+		}
+
+		@include abstracts.mixin_font($cl-ratio: 1.3, $cl-px: 48, $font-weight: 700, $line-height: 1.2);
+	}
+
+	& h2 {
+		&::first-letter {
+			text-transform: capitalize;
+		}
+
+		@include abstracts.mixin_font($cl-ratio: 1.2, $cl-px: 24, $font-weight: 700, $line-height: 1.2);
+	}
+
+	& p {
+		&::first-letter {
+			text-transform: capitalize;
+		}
+
+		@include abstracts.mixin_font(
+			$cl-ratio: 1.2,
+			$cl-px: 18,
+			$font-weight: 600,
+			$line-height: 1.5,
+			$color: var(--global-grey)
+		);
+	}
+}

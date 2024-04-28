@@ -1,0 +1,17 @@
+@use '../../scss/abstracts';
+@use '../../scss/base/media-queries' as breakpoint;
+
+.about-main {
+
+	& article {
+		h2 {
+		
+			&::first-letter {
+				text-transform: capitalize;
+			}
+	
+			@include abstracts.mixin_font($cl-ratio: 1.3, $cl-px: 48, $font-weight: 700, $line-height: 1.2);
+		
+		}
+	}
+}
